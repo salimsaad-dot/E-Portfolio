@@ -67,6 +67,8 @@
   .eyebrow.c-coral::before{ background:var(--coral); }
   .eyebrow.c-teal{ color:var(--teal); }
   .eyebrow.c-teal::before{ background:var(--teal); }
+  .eyebrow.c-amber{ color:var(--amber); }
+  .eyebrow.c-amber::before{ background:var(--amber); }
   h1,h2,h3{font-family:var(--display); font-weight:600; letter-spacing:-0.01em;}
   :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
@@ -234,6 +236,20 @@
   }
   .sk-blue .chip{ background:var(--accent-dim); color:var(--accent); }
   .sk-violet .chip{ background:var(--violet-dim); color:var(--violet); }
+
+  /* CERTIFICATIONS */
+  .cert-card{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; border-left:4px solid var(--amber);
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .cert-icon{
+    width:52px; height:52px; border-radius:12px; background:#FFF6E5;
+    display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;
+  }
+  .cert-body{ flex:1; min-width:220px; }
+  .cert-body h3{ font-size:17px; margin-bottom:6px; }
+  .cert-meta{ font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); }
   .sk-teal .chip{ background:var(--teal-dim); color:var(--teal); }
 
   /* PROJECTS */
@@ -362,6 +378,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
       <a href="assets/Amuzuloh_Saad_Salim_CV.pdf" class="nav-cv" id="cvBtn" target="_blank" rel="noopener">Resume</a>
@@ -462,6 +479,24 @@
             <span class="chip">REST principles</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow c-amber">Certifications</p>
+        <h2>Credentials</h2>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🛡</div>
+        <div class="cert-body">
+          <h3>Certified Computer Forensics Analyst (CCFA)</h3>
+          <p class="cert-meta">eSecurity Institute · Issued July 2026 · Certificate ID: iqscfmth4n</p>
+        </div>
+        <a href="assets/CCFA_Certificate.pdf" target="_blank" rel="noopener" class="btn btn-ghost">View Certificate ↗</a>
       </div>
     </div>
   </section>
