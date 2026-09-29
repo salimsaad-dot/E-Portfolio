@@ -669,7 +669,7 @@
               <span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span>
             </div>
             <div class="project-links">
-              <span class="btn btn-ghost" style="cursor:default; opacity:0.7;">Code available on request</span>
+              <a href="https://github.com/salimsaad-dot/school_management_system" target="_blank" rel="noopener" class="btn btn-ghost">View Code ↗</a>
             </div>
           </div>
         </div>
@@ -741,14 +741,18 @@
               <span class="contact-icon">in</span> LinkedIn Profile
             </a>
           </div>
-          <form id="contactForm">
+          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none;">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
             <div class="form-row">
-              <input type="text" placeholder="Your name" id="cf-name" required>
-              <input type="email" placeholder="Your email" id="cf-email" required>
+              <input type="text" placeholder="Your name" id="cf-name" name="name" required>
+              <input type="email" placeholder="Your email" id="cf-email" name="email" required>
             </div>
-            <textarea placeholder="Your message" id="cf-message" required></textarea>
-            <button type="submit" class="form-submit">Send Message</button>
-            <p class="form-note">Opens your email client with this message pre-filled.</p>
+            <textarea placeholder="Your message" id="cf-message" name="message" required></textarea>
+            <button type="submit" class="form-submit" id="cf-submit">Send Message</button>
+            <p class="form-note" id="cf-note">Sends directly — I'll get back to you by email.</p>
           </form>
         </div>
       </div>
@@ -819,15 +823,44 @@
     });
   });
 
-  // Contact form -> mailto fallback
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
+  // Contact form -> Netlify Forms (AJAX), with mailto fallback if the request fails
+  function encodeFormData(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('cf-name').value;
     const email = document.getElementById('cf-email').value;
     const message = document.getElementById('cf-message').value;
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:salimsaad135@gmail.com?subject=${subject}&body=${body}`;
+    const botField = contactForm.querySelector('[name="bot-field"]').value;
+    const submitBtn = document.getElementById('cf-submit');
+    const note = document.getElementById('cf-note');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeFormData({ 'form-name': 'contact', name, email, message, 'bot-field': botField })
+    })
+      .then(() => {
+        contactForm.reset();
+        submitBtn.textContent = 'Message Sent ✓';
+        note.textContent = "Thanks — I'll get back to you soon.";
+      })
+      .catch(() => {
+        // Fallback if the request fails (e.g. running locally, off Netlify)
+        const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+        const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+        window.location.href = `mailto:salimsaad135@gmail.com?subject=${subject}&body=${body}`;
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      });
   });
 
 </script>
