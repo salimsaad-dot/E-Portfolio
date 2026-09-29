@@ -848,13 +848,14 @@
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encodeFormData({ 'form-name': 'contact', name, email, message, 'bot-field': botField })
     })
-      .then(() => {
+      .then((response) => {
+        if (!response.ok) throw new Error('Form endpoint unavailable');
         contactForm.reset();
         submitBtn.textContent = 'Message Sent ✓';
         note.textContent = "Thanks — I'll get back to you soon.";
       })
       .catch(() => {
-        // Fallback if the request fails (e.g. running locally, off Netlify)
+        // Fallback if the request fails or the response isn't OK (e.g. running locally, off Netlify)
         const subject = encodeURIComponent(`Portfolio contact from ${name}`);
         const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
         window.location.href = `mailto:salimsaad135@gmail.com?subject=${subject}&body=${body}`;
