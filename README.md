@@ -2,7 +2,7 @@
 
 Personal portfolio of **Amuzuloh Saad Salim** — final-year BSc Information Technology student, University of Ghana.
 
-**Live:** https://stately-starlight-954cc8.netlify.app/
+**Live:** https://amuzuloh-dev.netlify.app/
 (mirrored on [GitHub Pages](https://salimsaad-dot.github.io/E-Portfolio/))
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
