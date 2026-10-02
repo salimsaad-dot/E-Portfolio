@@ -62,6 +62,7 @@
   img{max-width:100%; display:block;}
   ul{list-style:none;}
   section{padding:110px 24px 130px;}
+  #contact{padding-top:40px;}
   .wrap{max-width:1100px; margin:0 auto;}
 
   .skip-link{
@@ -465,6 +466,12 @@
     .fact{ flex-direction:column; gap:4px; }
     .fact-value{ text-align:left; }
     section{ padding:80px 20px; }
+    #contact{ padding-top:24px; }
+    .shot-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+
+  @media (max-width:480px){
+    .shot-grid, .shot-grid-2{ grid-template-columns:1fr; }
   }
 </style>
 </head>
@@ -556,31 +563,40 @@
       </div>
       <div class="ledger reveal">
         <div class="ledger-row">
-          <div class="ledger-label"><span class="ledger-mark"></span>Languages</div>
+          <div class="ledger-label"><span class="ledger-mark"></span>Build</div>
+          <div class="chip-row">
+            <span class="chip">Full-stack web applications</span>
+            <span class="chip">CRUD-based management systems</span>
+            <span class="chip">Authentication &amp; role-based access</span>
+            <span class="chip">Responsive interfaces</span>
+          </div>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-label"><span class="ledger-mark"></span>Data</div>
+          <div class="chip-row">
+            <span class="chip">MySQL / MariaDB</span>
+            <span class="chip">Relational database design</span>
+            <span class="chip">SQL queries &amp; data handling</span>
+          </div>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-label"><span class="ledger-mark"></span>Security</div>
+          <div class="chip-row">
+            <span class="chip">Prepared statements</span>
+            <span class="chip">Input validation &amp; output escaping</span>
+            <span class="chip">Session management</span>
+            <span class="chip">Login protection</span>
+          </div>
+        </div>
+        <div class="ledger-row">
+          <div class="ledger-label"><span class="ledger-mark"></span>Tools</div>
           <div class="chip-row">
             <span class="chip">PHP</span>
             <span class="chip">JavaScript</span>
-            <span class="chip">HTML5</span>
-            <span class="chip">CSS3</span>
-            <span class="chip">SQL</span>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <div class="ledger-label"><span class="ledger-mark"></span>Tools &amp; Platforms</div>
-          <div class="chip-row">
-            <span class="chip">MySQL / MariaDB</span>
-            <span class="chip">XAMPP</span>
+            <span class="chip">HTML5 / CSS3</span>
             <span class="chip">Git &amp; GitHub</span>
             <span class="chip">VS Code</span>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <div class="ledger-label"><span class="ledger-mark"></span>Concepts</div>
-          <div class="chip-row">
-            <span class="chip">Secure coding</span>
-            <span class="chip">Responsive design</span>
-            <span class="chip">Database design</span>
-            <span class="chip">REST principles</span>
+            <span class="chip">XAMPP</span>
           </div>
         </div>
       </div>
@@ -659,10 +675,10 @@
             <div class="project-block">
               <h4>Technical Highlights</h4>
               <ul class="findings">
-                <li>Hardened all 27 PHP files against SQL injection using prepared statements</li>
+                <li>Hardened the codebase against SQL injection using prepared statements throughout</li>
                 <li>Fixed 222 XSS vulnerabilities across 19 files during a full security audit</li>
                 <li>Built login-attempt limiting — 5 attempts, 15-minute lockout with a live countdown</li>
-                <li>Designed a 9-table relational schema, including per-term student remarks</li>
+                <li>Designed a 10-table relational schema, including per-term student remarks</li>
               </ul>
             </div>
             <div class="chip-row">
