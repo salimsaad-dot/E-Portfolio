@@ -676,7 +676,7 @@
               <h4>Technical Highlights</h4>
               <ul class="findings">
                 <li>Hardened the codebase against SQL injection using prepared statements throughout</li>
-                <li>Fixed 222 XSS vulnerabilities across 19 files during a full security audit</li>
+                <li>Escaped all user-supplied output through a centralized htmlspecialchars() helper, applied consistently across the codebase</li>
                 <li>Built login-attempt limiting — 5 attempts, 15-minute lockout with a live countdown</li>
                 <li>Designed a 10-table relational schema, including per-term student remarks</li>
               </ul>
