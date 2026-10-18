@@ -755,6 +755,69 @@
         </div>
       </div>
 
+      <!-- Project 3 -->
+      <div class="project reveal">
+        <div class="project-head">
+          <div>
+            <h3>SmartPay</h3>
+            <p class="project-sub">Multi-tenant fee collection &amp; SMS payment platform for Ghanaian schools</p>
+          </div>
+          <span class="case-tag"><b>Case 03</b> · Solo Founder &amp; Builder</span>
+        </div>
+
+        <div class="project-layout">
+          <div>
+            <div class="shot-gallery">
+              <div class="frame shot-main spotlight">
+                <div class="frame-bar"><span></span><span></span><span></span></div>
+                <img src="assets/smartpay_dashboard.jpg" alt="SmartPay dashboard with AI-generated financial summary">
+              </div>
+              <div class="shot-grid">
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/smartpay_arrears.jpg" alt="SmartPay arrears list showing student balances and payment status">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/smartpay_fees.jpg" alt="SmartPay fee structure builder">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/smartpay_reminder.jpg" alt="SMS fee reminder with a payment link and Mobile Money number">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project-block">
+              <h4>The Problem</h4>
+              <p>Schools in Ghana still chase fees with printed bills, phone calls and handwritten records — it eats the bursar's time every term, and unpaid balances get missed.</p>
+            </div>
+            <div class="project-block">
+              <h4>What I Built</h4>
+              <p>A multi-tenant fee platform: admins set fee structures per class and term, SmartPay generates invoices and texts parents a payment link, and parents pay by Mobile Money or card through Paystack on any phone — no app required. An AI-generated daily summary (Google Gemini) gives the office a plain-English read on collection progress.</p>
+            </div>
+            <div class="project-block">
+              <h4>Technical Highlights</h4>
+              <ul class="findings">
+                <li>Next.js frontend (Vercel) and Express/Node backend (Render) on MySQL, backed by a 44-file automated test suite (Jest + Supertest)</li>
+                <li>A startup config validator that refuses to boot on a missing secret rather than failing silently — written after a real incident where a missing JWT_SECRET broke every login while the health check still said "running"</li>
+                <li>Scheduled jobs — Friday reminders, payment reconciliation, nightly backups — authenticated via a dedicated secret, separate from user login</li>
+                <li>Per-school data isolation with an audit log for every fee edit and voided payment, plus rate limiting and security headers on every request</li>
+              </ul>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Next.js</span><span class="chip">Node.js / Express</span><span class="chip">MySQL</span><span class="chip">Paystack</span>
+            </div>
+            <div class="project-links">
+              <a href="https://smartpay-gh.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">View Live Site ↗</a>
+              <a href="https://github.com/salimsaad-dot/smartpay" target="_blank" rel="noopener" class="btn btn-ghost">View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
