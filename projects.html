@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Amuzuloh Saad Salim</title>
+<meta name="description" content="Case studies: Eagle Vision School Management System, Shopzone, and SmartPay — by Amuzuloh Saad Salim, full-stack developer.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects — Amuzuloh Saad Salim">
+<meta property="og:description" content="Case studies: Eagle Vision School Management System, Shopzone, and SmartPay — by Amuzuloh Saad Salim, full-stack developer.">
+<meta property="og:image" content="assets/sms_dashboard.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects — Amuzuloh Saad Salim">
+<meta name="twitter:description" content="Case studies: Eagle Vision School Management System, Shopzone, and SmartPay.">
+<meta name="twitter:image" content="assets/sms_dashboard.jpg">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23191713'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23A8551F' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a href="#top" class="skip-link">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header id="siteHeader">
+  <nav>
+    <a href="index.html" class="logo">amuzuloh<span>.</span>dev</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#certifications">Certifications</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="assets/Amuzuloh_Saad_Salim_CV.pdf" class="nav-cv" id="cvBtn" target="_blank" rel="noopener">Resume ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal in">
+        <div class="sec-tag"><span class="sec-num">04</span><p class="eyebrow">Projects</p></div>
+        <h2>Selected work</h2>
+        <p style="color:var(--ink-soft);font-size:16.5px;max-width:60ch;margin-top:14px;">A closer look at what I've built — the problem, the approach, and the engineering decisions behind each one.</p>
+      </div>
+
+      <!-- Project 1 -->
+      <div class="project reveal" id="eagle-vision">
+        <div class="project-head">
+          <div>
+            <h3>Eagle Vision School Management System</h3>
+            <p class="project-sub">Web-based records, attendance &amp; grading system — built for an operating school</p>
+          </div>
+          <span class="case-tag"><b>Case 01</b> · Solo Capstone</span>
+        </div>
+
+        <div class="project-layout">
+          <div>
+            <div class="shot-gallery">
+              <div class="frame shot-main spotlight">
+                <div class="frame-bar"><span></span><span></span><span></span></div>
+                <img src="assets/sms_dashboard.jpg" alt="Eagle Vision SMS dashboard">
+              </div>
+              <div class="shot-grid">
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/sms_finance.jpg" alt="Eagle Vision SMS finance and fee collection overview">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/sms_attendance.jpg" alt="Eagle Vision SMS attendance marking">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/sms_students.jpg" alt="Eagle Vision SMS student records">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project-block">
+              <h4>The Problem</h4>
+              <p>Eagle Vision Basic School (~250 students, 13 classes, 12 teachers) tracked attendance, grading, and fee collection manually — slow to update and easy to get wrong.</p>
+            </div>
+            <div class="project-block">
+              <h4>What I Built</h4>
+              <p>A full system for student records, attendance, class/subject management, GES-standard grading (class score + exam score → grade 1–9), and fee/finance tracking — now used operationally by school staff.</p>
+            </div>
+            <div class="project-block">
+              <h4>Technical Highlights</h4>
+              <ul class="findings">
+                <li>Hardened the codebase against SQL injection using prepared statements throughout</li>
+                <li>Escaped all user-supplied output through a centralized htmlspecialchars() helper, applied consistently across the codebase</li>
+                <li>Built login-attempt limiting — 5 attempts, 15-minute lockout with a live countdown</li>
+                <li>Designed a 10-table relational schema, including per-term student remarks</li>
+              </ul>
+            </div>
+            <div class="chip-row">
+              <span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/salimsaad-dot/school_management_system" target="_blank" rel="noopener" class="btn btn-ghost">View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project reveal" id="shopzone">
+        <div class="project-head">
+          <div>
+            <h3>Shopzone</h3>
+            <p class="project-sub">E-commerce storefront built with a team</p>
+          </div>
+          <span class="case-tag"><b>Case 02</b> · Team Project, Frontend</span>
+        </div>
+
+        <div class="project-layout">
+          <div>
+            <div class="shot-gallery">
+              <div class="frame shot-main spotlight">
+                <div class="frame-bar"><span></span><span></span><span></span></div>
+                <img src="assets/shopzone_home.jpg" alt="Shopzone storefront homepage">
+              </div>
+              <div class="shot-grid shot-grid-2">
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/shopzone_product.jpg" alt="Shopzone product page">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/shopzone_checkout.jpg" alt="Shopzone checkout page">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="project-block">
+              <h4>What I Built</h4>
+              <p>Frontend for Shopzone, a live e-commerce web app — working within a team to implement the storefront UI using HTML, CSS and JavaScript.</p>
+            </div>
+            <div class="chip-row">
+              <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://baabahanson.com/" target="_blank" rel="noopener" class="btn btn-primary">View Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project reveal" id="smartpay">
+        <div class="project-head">
+          <div>
+            <h3>SmartPay</h3>
+            <p class="project-sub">Multi-tenant fee collection &amp; SMS payment platform for Ghanaian schools</p>
+          </div>
+          <span class="case-tag"><b>Case 03</b> · Solo Founder &amp; Builder</span>
+        </div>
+
+        <div class="project-layout">
+          <div>
+            <div class="shot-gallery">
+              <div class="frame shot-main spotlight">
+                <div class="frame-bar"><span></span><span></span><span></span></div>
+                <img src="assets/smartpay_dashboard.jpg" alt="SmartPay dashboard with AI-generated financial summary">
+              </div>
+              <div class="shot-grid">
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/smartpay_arrears.jpg" alt="SmartPay arrears list showing student balances and payment status">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/smartpay_fees.jpg" alt="SmartPay fee structure builder">
+                </div>
+                <div class="frame">
+                  <div class="frame-bar"><span></span><span></span><span></span></div>
+                  <img src="assets/smartpay_reminder.jpg" alt="SMS fee reminder with a payment link and Mobile Money number">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="project-block">
+              <h4>The Problem</h4>
+              <p>Schools in Ghana still chase fees with printed bills, phone calls and handwritten records — it eats the bursar's time every term, and unpaid balances get missed.</p>
+            </div>
+            <div class="project-block">
+              <h4>What I Built</h4>
+              <p>A multi-tenant fee platform: admins set fee structures per class and term, SmartPay generates invoices and texts parents a payment link, and parents pay by Mobile Money or card through Paystack on any phone — no app required. An AI-generated daily summary (Google Gemini) gives the office a plain-English read on collection progress.</p>
+            </div>
+            <div class="project-block">
+              <h4>Technical Highlights</h4>
+              <ul class="findings">
+                <li>Next.js frontend (Vercel) and Express/Node backend (Render) on MySQL, backed by a 44-file automated test suite (Jest + Supertest)</li>
+                <li>A startup config validator that refuses to boot on a missing secret rather than failing silently — written after a real incident where a missing JWT_SECRET broke every login while the health check still said "running"</li>
+                <li>Scheduled jobs — Friday reminders, payment reconciliation, nightly backups — authenticated via a dedicated secret, separate from user login</li>
+                <li>Per-school data isolation with an audit log for every fee edit and voided payment, plus rate limiting and security headers on every request</li>
+              </ul>
+            </div>
+            <div class="chip-row">
+              <span class="chip">Next.js</span><span class="chip">Node.js / Express</span><span class="chip">MySQL</span><span class="chip">Paystack</span>
+            </div>
+            <div class="project-links">
+              <a href="https://smartpay-gh.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">View Live Site ↗</a>
+              <a href="https://github.com/salimsaad-dot/smartpay" target="_blank" rel="noopener" class="btn btn-ghost">View Code ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects-cta">
+    <div class="contact-sec reveal">
+      <div class="wrap" style="text-align:center;">
+        <p class="eyebrow" style="justify-content:center;">What's Next</p>
+        <h2>Want to build something like this?</h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto;">I'm open to National Service placements and web development opportunities — let's talk.</p>
+        <a href="index.html#contact" class="btn btn-primary" style="margin-top:8px;">Get In Touch ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Amuzuloh Saad Salim · Built with HTML, CSS &amp; JavaScript
+</footer>
+
+<script>
+  // Header scroll state + scroll progress bar
+  const header = document.getElementById('siteHeader');
+  const scrollProgress = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Cursor spotlight on cards
+  document.querySelectorAll('.spotlight').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+      card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+    });
+  });
+</script>
+
+</body>
+</html>
