@@ -457,7 +457,7 @@
   }
 
   /* WORK TEASER (homepage) */
-  .work-teaser-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-bottom:40px; }
+  .work-teaser-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); gap:24px; margin-bottom:40px; }
   .work-teaser-card{
     display:flex; flex-direction:column;
     border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
