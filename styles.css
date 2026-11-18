@@ -310,6 +310,9 @@
     letter-spacing:.06em; margin-bottom:8px;
   }
   .project-block p{ color:var(--ink-soft); font-size:15px; }
+  .client-quote{ border-left:3px solid var(--accent); background:var(--accent-tint); padding:14px 18px; border-radius:0 10px 10px 0; }
+  .client-quote p{ font-family:var(--display); font-size:18px; color:var(--ink); font-style:italic; line-height:1.45; }
+  .client-quote cite{ display:block; margin-top:6px; font-family:var(--mono); font-size:11px; font-style:normal; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); }
 
   /* Findings log — replaces arrow bullet list */
   .findings{ display:flex; flex-direction:column; counter-reset:finding; }
